@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+
+  mongo:
+    image : mongo
+    container_name: mongodb
+    volumes:
+      - db/mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+      - MONGO_INITDB_DATABASE=${PROJECT_NAME}
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+
+  redis:
+    image: redis
+
+  firefox:
+    image: selenium/standalone-firefox
+    shm_size: 2gb
+    ports:
+      - 4444:4444
+      - 7900:7900

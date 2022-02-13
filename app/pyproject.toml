@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cheapfinder"
+version = "0.1.0"
+description = ""
+authors = ["Andrei Frolov <zeratul268@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.73.0"
+uvicorn = "^0.17.4"
+Scrapy = "^2.5.1"
+pymongo = "^4.0.1"
+attrs = "^21.4.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
